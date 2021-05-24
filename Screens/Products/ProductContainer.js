@@ -4,6 +4,7 @@ import { Container, Header, Icon, Item, Text, Input } from 'native-base'
 
 import ProductList from './ProductLits'
 import SearchedProducts from './SearchedProducts'
+import Banner from '../../Shared/Banner'
 
 const data = require('./products.json')
 
@@ -76,8 +77,11 @@ const ProductContainer = () => {
           :
           (
             <View style={styles.container}>
+              <View>
+                <Banner />
+              </View>
               <Text>Products</Text>
-              <View >
+              <View style={styles.listContainer}>
                 <FlatList
                   numColumns={2}
                   data={products}
@@ -101,16 +105,18 @@ export default ProductContainer
 
 const styles = StyleSheet.create({
   container: {
-    flexWrap: "wrap",
+    // flexWrap: "wrap",
     backgroundColor: "gainsboro",
+
   },
   listContainer: {
     height: height,
-    flex: 1,
+    //flex: 1,
     flexDirection: "row",
     alignItems: "flex-start",
     flexWrap: "wrap",
     backgroundColor: "gainsboro",
+
   },
   center: {
     justifyContent: 'center',
